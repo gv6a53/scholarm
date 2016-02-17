@@ -1,0 +1,10 @@
+.navbar {
+    border-radius: 0;
+}
+.single-form-container {
+    width: 40%;
+    margin: auto;
+}
+.single-form-container form input {
+    margin-bottom: 10px;
+}
