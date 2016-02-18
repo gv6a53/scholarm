@@ -9,6 +9,7 @@ App::uses('AppController', 'Controller');
  *
  * @property    Event $Event
  * @property    Interview $Interview
+ * @property    Video $Video
  *
  * @property    SessionComponent $Session
  * @property    PaginatorComponent $Paginator
@@ -19,16 +20,13 @@ class AdminsController extends AppController
      * The dependency of needed Models
      * @var array
      */
-    public $uses = array('Event', 'Interview');
+    public $uses = array('Event', 'Interview', 'Video');
 
     /**
      * The dependency of needed Components
      * @var array
      */
-    public $components = array(
-        'Session',
-        'Paginator'
-    );
+    public $components = array('Session', 'Paginator');
 
     public function eventAdd()
     {
@@ -76,5 +74,23 @@ class AdminsController extends AppController
                 }
             }
         }
+    }
+
+    public function videoAdd()
+    {
+        $this->js[] = '//cdn.tinymce.com/4/tinymce.min.js';
+        $this->js[] = 'admins/interview_add';
+
+        if($this->request->is('post')) {
+            $this->Video->save($this->request->data);
+        }
+
+        $this->viewData['videoTypes'] = array(
+            'armenian_studies' => 'Armenian studies',
+            'nagorno_karabakh' => 'Nagorno-Karabakh',
+            'current_issues' => 'Current issues',
+            'armenian_genocide' => 'Armenian Genocide',
+            'other' => 'Other'
+        );
     }
 }

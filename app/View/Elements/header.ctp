@@ -29,11 +29,11 @@
                     <li class="dropdown">
                         <a href="#" class="main-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Video Library <span class="glyphicon glyphicon-chevron-down arrow-down"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Armenian studies</a></li>
-                            <li><a href="#">Nagorno-Karabakh</a></li>
-                            <li><a href="#">Current issues</a></li>
-                            <li><a href="#">Armenian Genocide</a></li>
-                            <li><a href="#">Other</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'armenian_studies')); ?>">Armenian studies</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'nagorno_karabakh')); ?>">Nagorno-Karabakh</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'current_issues')); ?>">Current issues</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'armenian_genocide')); ?>">Armenian Genocide</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'other')); ?>">Other</a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="main-link">Introduction to Armenia</a></li>
