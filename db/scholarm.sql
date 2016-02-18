@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2016 at 08:54 PM
+-- Generation Time: Feb 18, 2016 at 10:05 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -65,6 +65,29 @@ CREATE TABLE IF NOT EXISTS `interviews` (
 INSERT INTO `interviews` (`interview_id`, `title`, `body`, `thumbnail`, `video`, `modified`, `created`) VALUES
 (1, 'What is Lorem Ipsum?', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2c83764aed387183319dc530a86f5c16.jpg', 'https://www.youtube.com/watch?v=pVJv32qj7xA', '2016-02-11 19:45:55', '2016-02-11 19:45:55');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `video_id` int(11) NOT NULL,
+  `video_type` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  `modified` datetime NOT NULL,
+  `created` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`video_id`, `video_type`, `title`, `video`, `body`, `modified`, `created`) VALUES
+(1, 'armenian_studies', 'Coldplay - Hymn For The Weekend', 'https://www.youtube.com/watch?v=YykjpeuMNEk', '<p>The second single to be taken from Coldplay''s acclaimed new album, A Head Full Of Dreams (out now). Download the song from<a class="yt-uix-sessionlink  " href="http://smarturl.it/AHFOD" target="_blank" rel="nofollow" data-sessionlink="ei=VhvGVu78EZGxcoy1o9AC">http://smarturl.it/AHFOD</a> or stream at <a class="yt-uix-sessionlink  " href="http://cldp.ly/cpspotify" target="_blank" rel="nofollow" data-sessionlink="ei=VhvGVu78EZGxcoy1o9AC">http://cldp.ly/cpspotify</a></p>', '2016-02-18 20:28:38', '2016-02-18 20:28:38');
+
 --
 -- Indexes for dumped tables
 --
@@ -82,6 +105,12 @@ ALTER TABLE `interviews`
   ADD PRIMARY KEY (`interview_id`);
 
 --
+-- Indexes for table `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`video_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -95,6 +124,11 @@ ALTER TABLE `events`
 --
 ALTER TABLE `interviews`
   MODIFY `interview_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
