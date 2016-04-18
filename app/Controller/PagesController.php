@@ -48,6 +48,7 @@ class PagesController extends AppController
 
 	public function index()
 	{
+
 		$this->viewData['interviews'] = $this->Interview->find('all', array(
 			'order' => array('Interview.interview_id' => 'DESC'),
 			'limit' => 3

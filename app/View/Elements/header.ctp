@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <li><a href="#" class="main-link">Introduction to Armenia</a></li>
-                    <li><a href="#" class="main-link">About us</a></li>
+                    <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'videos', 'aboutUs')); ?>" class="main-link">About us</a></li>
                 </ul>
             </div>
         </div>

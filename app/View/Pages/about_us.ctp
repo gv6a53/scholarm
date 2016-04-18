@@ -1,53 +1,32 @@
 <div class="container">
-
     <!-- Introduction Row -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Who We Are</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac eros augue. Vestibulum egestas
-                felis nunc, vel consectetur eros vulputate ut. Morbi eget eros a leo scelerisque euismod ac sed
-                mauris. Praesent ut iaculis diam, in tincidunt ipsum. Nam scelerisque pellentesque mauris sed
-                eleifend. Morbi sodales turpis eget dignissim laoreet. Cras sodales odio vitae felis congue accumsan.
-                Morbi vel efficitur ipsum. Fusce vel accumsan turpis. Aliquam varius ligula in rhoncus sodales.
-                Aliquam erat volutpat. Phasellus nec sapien turpis. Morbi iaculis consequat lacus nec aliquet.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac eros augue. Vestibulum egestas
-                felis nunc, vel consectetur eros vulputate ut. Morbi eget eros a leo scelerisque euismod ac sed
-                mauris. Praesent ut iaculis diam, in tincidunt ipsum. Nam scelerisque pellentesque mauris sed
-                eleifend. Morbi sodales turpis eget dignissim laoreet. Cras sodales odio vitae felis congue accumsan.
-                Morbi vel efficitur ipsum. Fusce vel accumsan turpis. Aliquam varius ligula in rhoncus sodales.
-                Aliquam erat volutpat. Phasellus nec sapien turpis. Morbi iaculis consequat lacus nec aliquet.
+            <h1 class="page-header">About Us
+                <small>ScholArm – for those who study and explore Armenia</small>
+            </h1>
+            <p style="font-size: 16px; text-align: justify;">Welcome dear visitor!</p>
+            <p style="font-size: 16px; text-align: justify;">
+                <b>ScholArm</b> is a platform for international intellectuals studying or exploring Armenia,
+                which aims to promote the valuable work they are doing and to present Armenia through their
+                eyes. We also facilitate communication and networking among scholars, foster their ties with
+                Armenia as well as provide information and assistance.
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac eros augue. Vestibulum egestas
-                felis nunc, vel consectetur eros vulputate ut. Morbi eget eros a leo scelerisque euismod ac sed
-                mauris. Praesent ut iaculis diam, in tincidunt ipsum. Nam scelerisque pellentesque mauris sed
-                eleifend. Morbi sodales turpis eget dignissim laoreet. Cras sodales odio vitae felis congue accumsan.
-                Morbi vel efficitur ipsum. Fusce vel accumsan turpis. Aliquam varius ligula in rhoncus sodales.
-                Aliquam erat volutpat. Phasellus nec sapien turpis. Morbi iaculis consequat lacus nec aliquet.
+            <p style="font-size: 16px; text-align: justify;">
+                <b>ScholArm website</b> is a portal of resources on Armenian topics and issues. Here you can find
+                ScholArm exclusive interviews as well as publications, articles, lectures, documentaries
+                and discussions related to Armenia collected from all over the world.
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac eros augue. Vestibulum egestas
-                felis nunc, vel consectetur eros vulputate ut. Morbi eget eros a leo scelerisque euismod ac sed
-                mauris. Praesent ut iaculis diam, in tincidunt ipsum. Nam scelerisque pellentesque mauris sed
-                eleifend. Morbi sodales turpis eget dignissim laoreet. Cras sodales odio vitae felis congue accumsan.
-                Morbi vel efficitur ipsum. Fusce vel accumsan turpis. Aliquam varius ligula in rhoncus sodales.
-                Aliquam erat volutpat. Phasellus nec sapien turpis. Morbi iaculis consequat lacus nec aliquet.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac eros augue. Vestibulum egestas
-                felis nunc, vel consectetur eros vulputate ut. Morbi eget eros a leo scelerisque euismod ac sed
-                mauris. Praesent ut iaculis diam, in tincidunt ipsum. Nam scelerisque pellentesque mauris sed
-                eleifend. Morbi sodales turpis eget dignissim laoreet. Cras sodales odio vitae felis congue accumsan.
-                Morbi vel efficitur ipsum. Fusce vel accumsan turpis. Aliquam varius ligula in rhoncus sodales.
-                Aliquam erat volutpat. Phasellus nec sapien turpis. Morbi iaculis consequat lacus nec aliquet.
+            <p style="font-size: 16px; text-align: justify;">
+                ScholArm website also helps you stay updated with the latest news, publications and events in
+                the scholarly world related to Armenia. So, mark your calendar and be in touch!
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam
-                inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur
-                debitis velit facere nisi expedita vel?
+            <p style="font-size: 16px; text-align: justify;">
+                Contact us<br />
+                E-mail: schlarminfo@gmail.com
             </p>
         </div>
     </div>
-
     <!-- Team Members Row -->
     <div class="row">
         <div class="col-lg-12">

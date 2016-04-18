@@ -31,7 +31,7 @@ class AdminsController extends AppController
         'Paginator',
         'Auth' => array(
             'loginAction' => array('controller' => 'admins', 'action' => 'signIn'),
-            'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
+            'loginRedirect' => array('controller' => 'admins', 'action' => 'eventsList'),
             'logoutRedirect' => array('controller' => 'admins', 'action' => 'signIn'),
             'authenticate' => array(
                 'Form' => array(
