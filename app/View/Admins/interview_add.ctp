@@ -7,7 +7,7 @@
     <h2 class="text-center">Add Interview</h2>
     <?php echo $this->Form->create('Interview', array('type' => 'file', 'inputDefaults' => array('required' => false))); ?>
         <?php echo $this->Form->input('title', array('class' => 'form-control')); ?>
-        <?php echo $this->Form->input('thumbnail', array('type' => 'file', 'class' => 'form-control')); ?>
+        <?php echo $this->Form->input('file', array('type' => 'file', 'class' => 'form-control')); ?>
         <?php echo $this->Form->input('video', array('class' => 'form-control')); ?>
         <?php echo $this->Form->input('body', array('class' => 'form-control')); ?>
         <div class="text-right">

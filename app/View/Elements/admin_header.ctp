@@ -10,8 +10,24 @@
         </div>
         <div class="collapse navbar-collapse" id="menu-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Sign In</a></li>
-                <li><a href="#">Sign Out</a></li>
+                <?php if(!$admin) { ?>
+                    <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'signIn')); ?>">Sign In</a>
+                    </li>
+                <?php } else { ?>
+                    <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'interviewsList')); ?>">Interviews</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'eventsList')); ?>">Events</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'videosList')); ?>">Videos</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'signOut')); ?>">Sign Out</a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

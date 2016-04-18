@@ -54,6 +54,8 @@ class AppController extends Controller
 
     public function beforeFilter()
     {
+        parent::beforeFilter();
+
         $this->css[] = 'lib/bootstrap.min';
         $this->css[] = 'lib/bootstrap-theme.min';
         $this->css[] = 'lib/owl.carousel';
@@ -70,6 +72,8 @@ class AppController extends Controller
 
     public function beforeRender()
     {
+        parent::beforeRender();
+
         if($this->controller == 'admins') {
             $this->css[] = 'admin';
             $this->layout = 'admin';

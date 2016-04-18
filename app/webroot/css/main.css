@@ -1,5 +1,7 @@
 body {
-    background: #F8F7F5;
+    background: #ffffff;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
 }
 .navbar-default {
     /*background-image: linear-gradient(to bottom,#ffffff 0,#f8f8f8 100%);*/
@@ -181,4 +183,69 @@ body {
 }
 .article .image img {
     width: 100%;
+}
+
+
+
+
+.read-more-button {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 190px;
+    height: 33px;
+    padding-top: 6px;
+    background: #0088A3;
+    border: 1px solid #0088A3;
+    color: #FFF;
+    transition: all 0.5s;
+}
+
+.read-more-button:hover, .read-more-button:active
+{
+    text-decoration: none;
+    color: #0088A3;
+    border-color: #0088A3;
+    background: #FFF;
+}
+
+.read-more-button span
+{
+    display: inline-block;
+    position: relative;
+    padding-right: 0;
+    transition: padding-right 0.5s;
+}
+
+.read-more-button span:after
+{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: -18px;
+    opacity: 0;
+    width: 11px;
+    height: 11px;
+    margin-top: -6px;
+    background: rgba(0, 0, 0, 0);
+    border: 3px solid #FFF;
+    border-top: none;
+    border-right: none;
+    transition: opacity 0.5s, top 0.5s, right 0.5s;
+    transform: rotate(225deg);
+}
+
+.read-more-button:hover span, .read-more-button:active span
+{
+    padding-right: 30px;
+}
+
+.read-more-button:hover span:after, .read-more-button:active span:after
+{
+    transition: opacity 0.5s, top 0.5s, right 0.5s;
+    opacity: 1;
+    border-color: #0088A3;
+    right: 0;
+    top: 50%;
 }

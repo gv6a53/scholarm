@@ -93,17 +93,35 @@ class PagesController extends AppController
 		$this->viewData['videos'] = $videos;
 	}
 
-	public function interview($id)
+	public function interview($id = null)
 	{
-		$this->viewData['interview'] = $this->Interview->find('first', array(
-			'conditions' => array('Interview.interview_id' => $id)
-		));
+		if(!($interview = $this->Interview->findByInterviewId($id))) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+		}
+
+		$this->viewData['interview'] = $interview;
 	}
 
-	public function event($id)
+	public function event($id = null)
 	{
-		$this->viewData['event'] = $this->Event->find('first', array(
-			'conditions' => array('Event.event_id' => $id)
-		));
+		if(!($event = $this->Event->findByEventId($id))) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+		}
+
+		$this->viewData['event'] = $event;
+	}
+
+	public function video($id = null)
+	{
+		if(!($video = $this->Video->findByVideoId($id))) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+		}
+
+		$this->viewData['video'] = $video;
+	}
+
+	public function aboutUs()
+	{
+
 	}
 }
