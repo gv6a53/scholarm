@@ -17,8 +17,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="main-link">Home</a></li>
-                    <li><a href="#" class="main-link">Interviews</a></li>
+                    <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'index')); ?>" class="main-link">Home</a></li>
+                    <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'interviews')); ?>" class="main-link">Interviews</a></li>
                     <li class="dropdown">
                         <a href="#" class="main-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="glyphicon glyphicon-chevron-down arrow-down"></span></a>
                         <ul class="dropdown-menu">

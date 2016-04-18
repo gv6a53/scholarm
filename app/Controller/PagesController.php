@@ -94,6 +94,13 @@ class PagesController extends AppController
 		$this->viewData['videos'] = $videos;
 	}
 
+	public function interviews()
+	{
+		$this->viewData['interviews'] = $this->Interview->find('all', array(
+			'order' => array('Interview.interview_id' => 'DESC')
+		));
+	}
+
 	public function interview($id = null)
 	{
 		if(!($interview = $this->Interview->findByInterviewId($id))) {
