@@ -10,7 +10,7 @@
                 <div class="single-article">
                     <a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'interview', $interview['Interview']['interview_id'])); ?>">
                         <div class="image-container">
-                            <div class="image" style="background: url('/files/interviews/<?php echo $interview['Interview']['interview_id']; ?>/<?php echo $interview['Interview']['thumbnail']; ?>') no-repeat;"></div>
+                            <div class="image" style="background: url('/files/interviews/<?php echo $interview['Interview']['interview_id']; ?>/<?php echo $interview['Interview']['thumbnail']; ?>') no-repeat; background-size: cover;"></div>
                         </div>
                         <div class="description">
                             <div class="date"><?php echo date('d l Y', strtotime($interview['Interview']['created'])); ?></div>

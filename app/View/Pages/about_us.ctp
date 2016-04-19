@@ -2,9 +2,8 @@
     <!-- Introduction Row -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">About Us
-                <small>ScholArm – for those who study and explore Armenia</small>
-            </h1>
+            <h1 class="page-header">About Us</h1>
+			<h3>ScholArm – for those who study and explore Armenia</h3>
             <p style="font-size: 16px; text-align: justify;">Welcome dear visitor!</p>
             <p style="font-size: 16px; text-align: justify;">
                 <b>ScholArm</b> is a platform for international intellectuals studying or exploring Armenia,
@@ -34,17 +33,15 @@
         </div>
         <div class="col-lg-4 col-sm-6 text-center">
             <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
+            <h3>Nelly Minasyan
+                <small>Board Member</small>
             </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
         <div class="col-lg-4 col-sm-6 text-center">
             <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-            <h3>John Smith
-                <small>Job Title</small>
+            <h3>Nvard Chalikyan
+                <small>Board Member</small>
             </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
         </div>
     </div>
 </div>

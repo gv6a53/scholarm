@@ -65,33 +65,10 @@ class PagesController extends AppController
 			$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 		}
 
-		$videos = $this->Video->find('all', array(
+		$this->viewData['videosType'] = $type;
+		$this->viewData['videos'] = $this->Video->find('all', array(
 			'conditions' => array('Video.video_type' => $type)
 		));
-
-		foreach($videos as &$video) {
-			if($video['Video']['video'] && !empty($video['Video']['video'])) {
-				$youtubeId = explode('=', $video['Video']['video']);;
-
-				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, 'https://www.googleapis.com/youtube/v3/videos?key=AIzaSyAvOuRY2AUI4DOgV4huLqIJg_6SsxeAQXQ&part=snippet&id=' . $youtubeId[1]);
-				curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 2);
-				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-				curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-				curl_setopt($curl, CURLOPT_HEADER, 0);
-				curl_setopt($curl, CURLOPT_USERAGENT, 'Your application name');
-				$query = curl_exec($curl);
-				curl_close($curl);
-				$json = json_decode($query);
-
-				if(!isset($json->error)) {
-					$video['Video']['thumbnail'] = $json->items[0]->snippet->thumbnails->medium->url;
-				}
-			}
-		}
-
-		$this->viewData['videos'] = $videos;
 	}
 
 	public function interviews()
