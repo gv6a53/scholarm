@@ -60,6 +60,7 @@ class AppController extends Controller
         $this->css[] = 'lib/bootstrap-theme.min';
         $this->css[] = 'lib/owl.carousel';
         $this->css[] = 'lib/owl.theme';
+        $this->css[] = 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
 
         $this->js[] = 'lib/jquery.min';
         $this->js[] = 'lib/bootstrap.min';
