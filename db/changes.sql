@@ -1,0 +1,3 @@
+ALTER TABLE `events`
+ADD `location` VARCHAR(255) NULL DEFAULT NULL AFTER `body`,
+ADD `start_date` DATE NULL DEFAULT NULL AFTER `location`;

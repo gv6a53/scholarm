@@ -12,4 +12,13 @@ $(document).ready(function() {
         toolbar2: 'print preview media | forecolor backcolor emoticons',
         image_advtab: true
     });
+
+    $('#EventStartDate').datepicker({
+        dateFormat: 'yy-mm-dd'
+    });
+
+    new google.maps.places.Autocomplete(
+        (document.getElementById('EventLocation'))
+        //{types: ['geocode']}
+    );
 });

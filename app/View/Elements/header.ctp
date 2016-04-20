@@ -22,7 +22,7 @@
                     <li class="dropdown">
                         <a href="#" class="main-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="glyphicon glyphicon-chevron-down arrow-down"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Events and Announcements</a></li>
+                            <li><a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'events')); ?>">Events and Announcements</a></li>
                             <li><a href="#">Publications</a></li>
                         </ul>
                     </li>

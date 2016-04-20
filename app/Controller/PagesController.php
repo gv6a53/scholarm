@@ -87,6 +87,13 @@ class PagesController extends AppController
 		$this->viewData['interview'] = $interview;
 	}
 
+	public function events()
+	{
+		$this->viewData['events'] = $this->Event->find('all', array(
+			'order' => array('Event.event_id' => 'DESC')
+		));
+	}
+
 	public function event($id = null)
 	{
 		if(!($event = $this->Event->findByEventId($id))) {

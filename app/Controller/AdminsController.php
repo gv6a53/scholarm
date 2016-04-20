@@ -77,8 +77,11 @@ class AdminsController extends AppController
 
     public function eventAdd()
     {
+        $this->js[] = 'https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places';
         $this->js[] = 'lib/tinymce/tinymce.min.js';
+        $this->js[] = 'lib/jquery-ui.min';
         $this->js[] = 'admins/event_add';
+        $this->css[] = 'lib/jquery-ui.min';
 
         if($this->request->is('post')) {
             $data = $this->request->data;
@@ -94,7 +97,7 @@ class AdminsController extends AppController
 
                     move_uploaded_file($data['Event']['file']['tmp_name'], $filDir . $fileName);
 
-                    $this->Event->id = $event['Event']['id'];
+                    $this->Event->id = $event['Event']['event_id'];
                     $this->Event->saveField('thumbnail', $fileName);
                 }
 
