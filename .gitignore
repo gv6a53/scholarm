@@ -2,12 +2,14 @@
 #################################################
 /app/tmp
 /lib/
+/app/webroot/files
 /plugins
 /vendors
 /build
 /dist
 /tags
 *.mo
+/app/Config/database.php
 
 # IDE and editor specific files #
 #################################
