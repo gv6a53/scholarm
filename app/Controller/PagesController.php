@@ -28,6 +28,7 @@ App::uses('AppController', 'Controller');
  * @property    Event $Event
  * @property    Interview $Interview
  * @property    Video $Video
+ * @property    Publication $Publication
  *
  * @property    SessionComponent $Session
  * @property    PaginatorComponent $Paginator
@@ -38,7 +39,7 @@ class PagesController extends AppController
 	 * The dependency of needed Models
 	 * @var array
 	 */
-	public $uses = array('Event', 'Interview', 'Video');
+	public $uses = array('Event', 'Interview', 'Video', 'Publication');
 
 	/**
 	 * The dependency of needed Components
@@ -101,6 +102,22 @@ class PagesController extends AppController
 		}
 
 		$this->viewData['event'] = $event;
+	}
+
+	public function publications()
+	{
+		$this->viewData['publications'] = $this->Publication->find('all', array(
+			'order' => array('Publication.publication_id' => 'DESC')
+		));
+	}
+
+	public function publication($id = null)
+	{
+		if(!($publication = $this->Publication->findByPublicationId($id))) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'index'));
+		}
+
+		$this->viewData['publication'] = $publication;
 	}
 
 	public function video($id = null)

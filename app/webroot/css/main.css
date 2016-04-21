@@ -3,50 +3,51 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
 }
-.navbar-default {
-    /*background-image: linear-gradient(to bottom,#ffffff 0,#f8f8f8 100%);*/
-}
 .navbar {
+    background: #ffffff;
+    border: none;
     border-radius: 0;
-    box-shadow: 0 1px 5px 0 #D3D3D3;
-    border-bottom: 3px solid #0088a3;
-    background: #fff;
+    border-bottom: 4px solid #dddddd;
+    margin-bottom: 0;
 }
-.navbar li a {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 14px;
-    color: #0088a3 !important;
+.navbar-nav {
+    margin-bottom: -4px;
+    font-family: 'Poppins', sans-serif;
 }
-.navbar .arrow-down {
+.navbar-nav li a.main-link {
+    color: #3E454D;
+}
+
+.navbar .glyphicon-chevron-down {
     font-size: 11px;
-    margin-left: 5px;
 }
-.navbar-brand img {
-    width: 200px;
-    height: 40px;
-    margin-top: -8px;
+.navbar-default .navbar-brand {
+    font-size: 30px;
+    font-weight: 900;
+}
+.logo-schol {
+    color: #305B75;
+    margin-right: -8px;
+}
+.logo-arm {
+    color: #424242;
 }
 
 @media (min-width: 768px) {
-    .navbar {
-        min-height: 60px !important;
+    .navbar-nav .link-container:hover .main-link {
+        background: #b2b2b2 !important;
+        color: #ffffff !important;
+        border-bottom: 4px solid #979a9e;
     }
-    .navbar-default .navbar-nav li .main-link:hover,
-    .navbar-default .navbar-nav li .main-link:focus {
-        border-bottom: 3px solid #00657A;
-        color: #00657A;
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        display: block;
     }
-    .navbar-nav .main-link {
-        padding-top: 20px !important;
-        padding-bottom:0 !important;
+    .navbar-nav li a.main-link {
+        line-height: 30px;
         height: 60px;
     }
-    .navbar-right {
-        margin-bottom: -3px;
-    }
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
+    .navbar-default .navbar-brand {
+        margin-top: 3px;
     }
     .dropdown-menu {
         padding: 0;
@@ -59,12 +60,12 @@ body {
     .dropdown-menu li a {
         padding: 16px 20px;
         height: 50px;
-        color: #777;
+        color: #4e5b67;
     }
     .dropdown-menu li a:hover,
     .dropdown-menu li a:focus{
-        background: #F1F1F1;
-        color: #4A9EE7;
+        color: #777;
+        background: #edf0f4;
     }
 }
 
@@ -157,16 +158,6 @@ body {
 }
 
 
-
-.owl-carousel {
-    margin-top: -20px;
-}
-.owl-carousel .owl-controls{
-    margin-top: -27px;
-}
-.owl-carousel .item {
-    /*height: 350px;*/
-}
 .owl-carousel .item img {
     width: 100%;
 }

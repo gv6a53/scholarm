@@ -12,11 +12,7 @@
     <div class="footer-center">
         <div>
             <i class="fa fa-map-marker"></i>
-            <p><span>Abelyan 9</span> Yerevan, Armenia</p>
-        </div>
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>(+374) 96 500 214</p>
+            <p>Yerevan, Armenia</p>
         </div>
         <div>
             <i class="fa fa-envelope"></i>

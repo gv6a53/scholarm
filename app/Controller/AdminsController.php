@@ -10,6 +10,7 @@ App::uses('AppController', 'Controller');
  * @property    Event $Event
  * @property    Interview $Interview
  * @property    Video $Video
+ * @property    Publication $Publication
  *
  * @property    SessionComponent $Session
  * @property    PaginatorComponent $Paginator
@@ -20,7 +21,7 @@ class AdminsController extends AppController
      * The dependency of needed Models
      * @var array
      */
-    public $uses = array('Event', 'Interview', 'Video');
+    public $uses = array('Event', 'Interview', 'Video', 'Publication');
 
     /**
      * The dependency of needed Components
@@ -64,6 +65,11 @@ class AdminsController extends AppController
     public function signOut()
     {
         $this->redirect($this->Auth->logout());
+    }
+
+    public function index()
+    {
+
     }
 
     public function eventsList()
@@ -271,6 +277,108 @@ class AdminsController extends AppController
 
         $this->Session->setFlash('Interview successfully deleted');
         $this->redirect(array('controller' => 'admins', 'action' => 'interviewsList'));
+    }
+
+    public function publicationsList()
+    {
+        $this->Paginator->settings = array(
+            'order' => array('Publication.publication_id' => 'DESC'),
+            'limit' => 10
+        );
+        $this->viewData['publications'] = $this->Paginator->paginate('Publication');
+    }
+
+    public function publicationAdd()
+    {
+        $this->js[] = 'lib/tinymce/tinymce.min.js';
+        $this->js[] = 'admins/interview_add';
+
+        if($this->request->is('post')) {
+            $data = $this->request->data;
+
+            if($publication = $this->Publication->save($data)) {
+                if($data['Publication']['file']['error'] != 4 && $data['Publication']['file']['tmp_name'] && is_uploaded_file($data['Publication']['file']['tmp_name'])) {
+                    $filDir = WWW_ROOT . 'files/publications/' . $publication['Publication']['publication_id'] . '/';
+                    $fileName = md5($data['Publication']['file']['name']) . '.' . pathinfo($data['Publication']['file']['name'], PATHINFO_EXTENSION);
+
+                    if(!is_dir($filDir)) {
+                        mkdir($filDir, 0777, true);
+                    }
+
+                    move_uploaded_file($data['Publication']['file']['tmp_name'], $filDir . $fileName);
+
+                    $this->Publication->id = $publication['Publication']['publication_id'];
+                    $this->Publication->saveField('thumbnail', $fileName);
+                }
+
+                $this->Session->setFlash('Publication successfully added');
+                $this->redirect(array('controller' => 'admins', 'action' => 'publicationsList'));
+            }
+        }
+    }
+
+    public function publicationEdit($id = null)
+    {
+        if(!($publication = $this->Publication->findByPublicationId($id))) {
+            $this->Session->setFlash('Trying to modify unknown resource');
+            $this->redirect(array('controller' => 'admins', 'action' => 'publicationsList'));
+        }
+
+        $this->js[] = 'lib/tinymce/tinymce.min.js';
+        $this->js[] = 'admins/interview_add';
+
+        if($this->request->is('put')) {
+            $data = $this->request->data;
+
+            $this->Publication->id = $id;
+
+            if($this->Publication->save($data)) {
+                if($data['Publication']['file']['error'] != 4 && $data['Publication']['file']['tmp_name'] && is_uploaded_file($data['Publication']['file']['tmp_name'])) {
+                    $filDir = WWW_ROOT . 'files' . DS . 'publications' . DS . $id . DS;
+                    $fileName = md5($data['Publication']['file']['name']) . '.' . pathinfo($data['Publication']['file']['name'], PATHINFO_EXTENSION);
+
+                    if(!is_dir($filDir)) {
+                        mkdir($filDir, 0777, true);
+                    }
+
+                    if($publication['Publication']['thumbnail'] && file_exists($filDir . $publication['Publication']['thumbnail'])) {
+                        unlink($filDir . $publication['Publication']['thumbnail']);
+                    }
+
+                    move_uploaded_file($data['Publication']['file']['tmp_name'], $filDir . $fileName);
+
+                    $this->Publication->saveField('thumbnail', $fileName);
+                }
+
+                $this->Session->setFlash('Publication successfully modified');
+                $this->redirect(array('controller' => 'admins', 'action' => 'publicationsList'));
+            }
+        }
+
+        $this->request->data = $publication;
+    }
+
+    public function publicationRemove($id = null)
+    {
+        if(!($publication = $this->Publication->findByPublicationId($id))) {
+            $this->Session->setFlash('Trying to modify unknown resource');
+            $this->redirect(array('controller' => 'admins', 'action' => 'publicationsList'));
+        }
+
+        if($publication['Publication']['thumbnail']) {
+            $filDir = WWW_ROOT . 'files' . DS . 'publications' . DS . $id;
+
+            if(file_exists($filDir . DS . $publication['Publication']['thumbnail'])) {
+                unlink($filDir . DS . $publication['Publication']['thumbnail']);
+            }
+
+            rmdir($filDir);
+        }
+
+        $this->Publication->delete($id);
+
+        $this->Session->setFlash('Publication successfully deleted');
+        $this->redirect(array('controller' => 'admins', 'action' => 'publicationsList'));
     }
 
     public function videosList()

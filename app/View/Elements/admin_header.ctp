@@ -22,6 +22,9 @@
                         <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'eventsList')); ?>">Events</a>
                     </li>
                     <li>
+                        <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'publicationsList')); ?>">Publications</a>
+                    </li>
+                    <li>
                         <a href="<?php echo $this->Html->url(array('controller' => 'admins', 'action' => 'videosList')); ?>">Videos</a>
                     </li>
                     <li>
