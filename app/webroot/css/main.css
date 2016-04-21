@@ -165,7 +165,7 @@ body {
     margin-top: -27px;
 }
 .owl-carousel .item {
-    height: 350px;
+    /*height: 350px;*/
 }
 .owl-carousel .item img {
     width: 100%;

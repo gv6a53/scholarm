@@ -1,6 +1,5 @@
 <div id="owl-demo" class="owl-carousel">
     <div class="item"><img src="/img/slider/slide2.png" alt="Owl Image"></div>
-    <div class="item"><img src="/img/slider/slide3.png" alt="Owl Image"></div>
 </div>
 <div class="container">
     <div>
